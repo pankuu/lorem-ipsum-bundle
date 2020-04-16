@@ -24,25 +24,14 @@ class FunctionalTest extends TestCase
         $this->assertInstanceOf(KnpUIpsum::class, $ipsum);
         $this->assertIsString($ipsum->getParagraphs());
     }
-
-    public function testServiceWiringWithConfiguration()
-    {
-        $kernel = new KnpULoremIpsumTestingKernel();
-        $kernel->boot();
-        $container = $kernel->getContainer();
-
-        $ipsum = $container->get('knpu_lorem_ipsum.knpu_ipsum');
-        $this->assertStringContainsString('stub', $ipsum->getWords(100));
-    }
 }
 
 class KnpULoremIpsumTestingKernel extends Kernel
 {
     private $knpUIpsumConfig;
 
-    public function __construct(array $knpUIpsumConfig = [])
+    public function __construct()
     {
-        $this->knpUIpsumConfig = $knpUIpsumConfig;
         parent::__construct('test', true);
     }
 
