@@ -25,12 +25,6 @@
             "KnpU\\LoremIpsumBundle\\Teste\\": "tests/"
         }
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../LoremIpsumBundle"
-        }
-    ],
     "require-dev": {
         "symfony/phpunit-bridge": "^5.0",
         "symfony/framework-bundle": "^4.0",
